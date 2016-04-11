@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->make('view')->composer('front.layouts.app', 'App\Http\ViewComposers\CartComposer');
     }
 }

@@ -27,6 +27,7 @@ Route::get('products', 'ProductController@index');
 Route::get('categories', 'CategoryController@index');
 Route::get('checkout', 'CheckoutController@index');
 
+
 /**
  *  Patterns
  *
@@ -46,6 +47,10 @@ Route::get('dashboard', function () {
  * Admin routes
  * @author Mezai
  */
+Route::post('cart/add', 'CartController@add');
+Route::get('cart/destroy', 'CartController@destroy');
+Route::post('cart/remove', 'CartController@remove');
+Route::resource('cart', 'CartController');
 
 
 

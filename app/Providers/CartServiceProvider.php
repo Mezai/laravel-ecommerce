@@ -7,6 +7,11 @@ use Illuminate\Support\ServiceProvider;
 class CartServiceProvider extends ServiceProvider
 {
 
+    public function boot()
+    {
+        # code...
+    }
+
     /**
      * Register the application services.
      *

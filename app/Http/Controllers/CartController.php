@@ -27,7 +27,7 @@ class CartController extends Controller
         }
         $cart = Cart::content();
 
-        return view('frontend.pages.checkout', compact('cart'));
+        return redirect()->back()->with(compact('cart'));
     }
 
     /**
@@ -39,9 +39,10 @@ class CartController extends Controller
 
     public function destroy()
     {
+        $cart = Cart::content();
         Cart::destroy();
 
-        return view('frontend.pages.checkout');
+        return view('front.pages.checkout', compact('cart'));
     }
 
     /**
@@ -68,7 +69,7 @@ class CartController extends Controller
 
             $cart = Cart::content();
 
-            return view('frontend.pages.checkout', compact('cart'));
+            return view('front.pages.checkout', compact('cart'));
         }
     }
 
@@ -80,16 +81,17 @@ class CartController extends Controller
      */
     public function remove()
     {
+
         //get the id
-        if (Request::isMethod('get')) {
+        if (Request::isMethod('post')) {
             $product_id = Request::get('product_id');
             $rowId = Cart::search(array('id' => $product_id));
 
-            Cart::remove($rowId);
+            Cart::remove($rowId[0]);
 
             $cart = Cart::content();
 
-            return view('frontend.pages.checkout', compact('cart'));
+            return view('front.pages.checkout', compact('cart'));
         }
     }
 }

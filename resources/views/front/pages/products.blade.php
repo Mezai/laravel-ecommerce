@@ -17,7 +17,7 @@
 
                   <p>{{ $product->getPrice() }}</p>
                   <p>
-                    <form method="POST" action="{{url('cart')}}">
+                    <form method="POST" action="{{url('cart/add')}}">
                       <input type="hidden" name="product_id" value="{{$product->getId()}}">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <button type="submit" class="btn btn-primary">Add to cart</button>
