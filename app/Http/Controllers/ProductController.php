@@ -12,6 +12,6 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
-        return view('frontend.pages.products', compact('products'));
+        return view('front.pages.products', compact('products'));
     }
 }

@@ -12,6 +12,6 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('frontend.pages.categories', compact('categories'));
+        return view('front.pages.categories', compact('categories'));
     }
 }

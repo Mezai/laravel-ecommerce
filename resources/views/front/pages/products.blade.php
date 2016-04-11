@@ -1,4 +1,4 @@
-@extends('front.layouts.app');
+@extends('front.layouts.app')
 @section('title') Products - @parent @stop
 @section('content')
 <div class="row">

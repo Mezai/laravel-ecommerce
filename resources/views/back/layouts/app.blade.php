@@ -8,7 +8,7 @@
     <title>@section('title') Ecommerce website with laravel @show</title>
 
     @section('meta_keywords')
-
+    
     @show @section('meta_author')
 
     @show @section('meta_description')
@@ -21,13 +21,14 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     @yield('styles')
 
-
 </head>
 <body>
   @include('back.partials.nav')
   <div class="container-fluid main-container">
   		<div class="col-md-2 sidebar">
   			<div class="row">
+          <div class="absolute-wrapper"> </div>
+
 
         @include('back.partials.sidebar')
         </div>
