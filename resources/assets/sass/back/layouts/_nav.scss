@@ -1,0 +1,24 @@
+body{
+  background: $darkgrey;
+}
+
+.navbar-static-top {
+  background: $blue;
+  border-bottom: 1px solid black;
+
+}
+
+.navbar-fixed-bottom {
+  background: $green;
+}
+
+.well {
+  border-color: $red;
+}
+
+.panel-default {
+  border-color: $red;
+ >.panel-heading {
+  background: $lightred;
+  }
+}

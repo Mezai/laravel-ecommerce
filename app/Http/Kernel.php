@@ -14,10 +14,11 @@ class Kernel extends HttpKernel
      * @var array
      */
      protected $middleware = [
-         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Session\Middleware\StartSession::class,
-         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
     ];
+
 
 
     /**
@@ -26,25 +27,18 @@ class Kernel extends HttpKernel
      * @var array
      */
      protected $middlewareGroups = [
-         'web' => [
-             \App\Http\Middleware\EncryptCookies::class,
-             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-             //\Illuminate\Session\Middleware\StartSession::class,
-             //\Illuminate\View\Middleware\ShareErrorsFromSession::class,
-             \App\Http\Middleware\VerifyCsrfToken::class,
-         ],
-         'admin' => [
-             \App\Http\Middleware\EncryptCookies::class,
-             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-             //\Illuminate\Session\Middleware\StartSession::class,
-             //\Illuminate\View\Middleware\ShareErrorsFromSession::class,
-             \App\Http\Middleware\VerifyCsrfToken::class,
-         ],
+        'web' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            //\Illuminate\Session\Middleware\StartSession::class,
+            //\Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+        ],
 
-         'api' => [
-             'throttle:60,1',
-         ],
-     ];
+        'api' => [
+            'throttle:60,1',
+        ],
+    ];
 
     /**
      * The application's route middleware.
@@ -58,6 +52,6 @@ class Kernel extends HttpKernel
          'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
          'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
          'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'admin' => \App\Http\Middleware\RedirectIfNotAdmin::class,
+        'admin' => \App\Http\Middleware\RedirectAdmin::class,
      ];
 }
