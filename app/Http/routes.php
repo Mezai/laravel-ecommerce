@@ -40,9 +40,7 @@ Route::get('login', function () {
   return view('front.auth.login');
 });
 
-Route::get('dashboard', function () {
-  return view('back.pages.dashboard');
-});
+
 /**
  * Admin routes
  * @author Mezai
@@ -52,19 +50,20 @@ Route::get('cart/destroy', 'CartController@destroy');
 Route::post('cart/remove', 'CartController@remove');
 Route::resource('cart', 'CartController');
 
-
+Route::get('/admin/login', 'Admin\AuthController@showLoginForm');
+Route::post('/admin/login', 'Admin\AuthController@login');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
   //Dashboard
+  Route::get('dashboard', 'DashboardController@index');
+  Route::get('logout', 'Admin\AuthController@logout');
 
-  Route::get('dashboard', function () {
-        return 'successful';
-    });
-    Route::get('/', function () {
-          return 'fail';
-      });
-  Route::get('login', 'Admin\AuthController@showLoginForm');
-  Route::post('login', 'Admin\AuthController@postLogin');
-  Route::get('password/reset', 'Admin\PasswordController@resetPassword');
+
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
+
 
 });

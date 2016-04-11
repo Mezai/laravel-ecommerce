@@ -26,6 +26,12 @@
   @yield('content')
   </div>
   @yield('scripts')
-  <script src="{{ asset('js/admin.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
+
+  @if (count($errors) > 0)
+  <script type="text/javascript">
+    $('.panel-login').effect('shake');
+  </script>
+  @endif
 </body>
 </html>
