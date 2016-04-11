@@ -39,7 +39,9 @@ Route::get('login', function () {
   return view('front.auth.login');
 });
 
-
+Route::get('dashboard', function () {
+  return view('back.pages.dashboard');
+});
 /**
  * Admin routes
  * @author Mezai

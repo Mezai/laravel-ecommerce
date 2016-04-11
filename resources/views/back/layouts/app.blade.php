@@ -25,10 +25,18 @@
 </head>
 <body>
   @include('back.partials.nav')
+  <div class="container-fluid main-container">
+  		<div class="col-md-2 sidebar">
+  			<div class="row">
 
-  <div class="container">
-  @yield('content')
-  </div>
+        @include('back.partials.sidebar')
+        </div>
+      </div>
+
+    <div class="col-md-10 content">
+      @yield('content')
+    </div>
+</div>
   @include('back.partials.footer')
 
   @yield('scripts')
