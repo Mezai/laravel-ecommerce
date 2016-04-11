@@ -1,0 +1,250 @@
+/* Utils */
+/* Global vars for colors, type face etc */
+/* Colors */
+/*Font sizes etc.. */
+/*Mixins*/
+/*vendors */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/* Layouts */
+.navbar-default {
+  background: #5e412f; }
+  .navbar-default .navbar-brand {
+    color: #FFFFFF;
+    font-weight: 600; }
+    .navbar-default .navbar-brand:hover {
+      color: #FFFFFF; }
+  .navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+    transition: 1s ease-out; }
+    .navbar-default .navbar-nav > li > a:after {
+      content: '';
+      display: block;
+      height: 5px;
+      width: 0;
+      margin: 0;
+      transition: width .3s ease-out; }
+    .navbar-default .navbar-nav > li > a:hover {
+      color: #fcebb6; }
+    .navbar-default .navbar-nav > li > a:hover:after {
+      width: 100%;
+      background: #fcebb6; }
+
+#login-form {
+  display: block; }
+
+.panel-login {
+  border-color: #ccc;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2); }
+  .panel-login input:hover, .panel-login input:focus {
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    outline: none;
+    box-shadow: none; }
+  .panel-login input[type="text"], .panel-login input[type="email"], .panel-login input[type="password"] {
+    height: 45px;
+    font-size: 1.6rem;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear 0;
+    -moz-transition: all 0.1s linear 0;
+    -ms-transition: all 0.1s linear 0;
+    -o-transiton: all 0.1s linear 0;
+    transition: all 0.1s linear 0;
+    border-width: 1px;
+    border-color: #CCC;
+    border-style: solid; }
+  .panel-login > .panel-heading {
+    color: #00415d;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    text-align: center; }
+    .panel-login > .panel-heading a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: 600;
+      font-size: 1.6rem;
+      font-size: 16px;
+      -webkit-transition: all 0.1s linear 0;
+      -moz-transition: all 0.1s linear 0;
+      -ms-transition: all 0.1s linear 0;
+      -o-transiton: all 0.1s linear 0;
+      transition: all 0.1s linear 0; }
+    .panel-login > .panel-heading a.active {
+      font-size: 1.8rem;
+      font-size: 18px;
+      color: #78c0a8; }
+    .panel-login > .panel-heading hr {
+      margin-top: 10px;
+      margin-bottom: 0px;
+      clear: both;
+      border: 0;
+      height: 1px;
+      background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, 0.15), transparent); }
+
+.btn-register {
+  background-color: #f07818;
+  color: #FFFFFF;
+  outline: none;
+  font-size: 1.6rem;
+  font-size: 16px;
+  height: auto;
+  font-weight: 300;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-transform: uppercase;
+  border-color: #000000; }
+  .btn-register:hover, .btn-register:focus {
+    color: #FFFFFF;
+    background-color: #f5a260;
+    border-color: #f5a260; }
+
+.btn-login {
+  background-color: #78c0a8;
+  color: #FFFFFF;
+  outline: none;
+  font-size: 1.6rem;
+  font-size: 16px;
+  height: auto;
+  font-weight: 300;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-transform: uppercase;
+  border-color: #000000; }
+  .btn-login:hover, .btn-login:focus {
+    color: #FFFFFF;
+    background-color: #acd8ca;
+    border-color: #acd8ca; }
+
+.full {
+  width: 100%;
+  height: 45px; }
+
+.footer {
+  background: #5e412f;
+  height: auto;
+  padding-bottom: 30px;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #5e412f;
+  border-top: 1px solid #5e412f; }
+  .footer p {
+    margin: 0; }
+  .footer img {
+    max-width: 100%; }
+  .footer h3 {
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    font-size: 21px;
+    line-height: 25px;
+    position: relative;
+    border-bottom: 1px solid #FFFFFF;
+    color: #fcebb6;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    padding-right: 0;
+    padding-left: 0; }
+  .footer ul {
+    font-size: 1.4rem;
+    font-size: 14px;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 15px;
+    color: #000000; }
+    .footer ul li a {
+      padding: 0 0 5px 0;
+      display: block; }
+  .footer a {
+    color: #FFFFFF; }
+
+.supportLi h4 {
+  font-size: 1.8rem;
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: normal;
+  margin-bottom: 0 !important;
+  padding-bottom: 0; }
+
+.newsletter-box {
+  overflow: hidden; }
+  .newsletter-box input#appendedInputButton {
+    background: #FFFFFF;
+    display: inline-block;
+    float: left;
+    height: 30px;
+    clear: both;
+    width: 100%; }
+  .newsletter-box .btn {
+    border: 1px solid #000000;
+    border-radius: 3px;
+    display: inline-block;
+    height: 45px;
+    padding: 0;
+    width: 100%;
+    color: #fff; }
+
+.bg-gray {
+  background-color: #78c0a8;
+  box-shadow: 0 1px 0 #B4B3B3; }
+
+.social li {
+  background: none repeat scroll 0 0 #B5B5B5;
+  border: 2px solid #B5B5B5;
+  border-radius: 50%;
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+  padding: 0;
+  text-align: center;
+  width: 36px;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transiton: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
+  .social li:hover {
+    transform: scale(1.1) rotate(360deg);
+    -webkit-transform: scale(1.1) rotate(360deg);
+    -moz-transform: scale(1.1) rotate(360deg);
+    -ms-transform: scale(1.1) rotate(360deg);
+    -o-transform: scale(1.1) rotate(360deg); }
+  .social li a {
+    color: #EDEFF1; }
+  .social li:hover {
+    border: 2px solid #000000;
+    background: #f07818; }
+  .social li a i {
+    font-size: 1.6rem;
+    font-size: 16px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    color: #EDEFF1 !important; }
+
+.footer-bottom {
+  background: #fcebb6;
+  border-top: 1px solid #000000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0;
+  padding-left: 0; }
+  .footer-bottom p.pull-left {
+    padding-top: 6px; }
+
+.payments {
+  font-size: 1.6rem;
+  font-size: 16px; }
+
+/* Pages */
+.error {
+  margin: 0 auto; }
+
+html, body {
+  font-family: "Open Sans", sans-serif; }

@@ -1,0 +1,33 @@
+.navbar-default {
+  background: $brown;
+  .navbar-brand {
+    color: $white;
+    font-weight: $font-weight-bold;
+    &:hover {
+      color: $white;
+    }
+  }
+  .navbar-nav {
+    >li>a {
+      color:$white;
+      transition: 1s ease-out;
+
+      &:after {
+        content: '';
+        display: block;
+        height: 5px;
+        width: 0;
+        margin: 0;
+        transition: width .3s ease-out;
+      }
+
+      &:hover {
+        color: $sand;
+      }
+      &:hover:after {
+        width: 100%;
+        background: $sand;
+      }
+    }
+  }
+}

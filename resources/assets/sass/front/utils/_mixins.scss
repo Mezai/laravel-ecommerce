@@ -1,0 +1,120 @@
+/*Mixins*/
+
+@mixin font-size-x-small {
+  font-size: 1.2rem;
+  font-size: 12px;
+}
+
+@mixin font-size-small {
+  font-size: 1.4rem;
+  font-size: 14px;
+
+}
+
+@mixin font-size-regular {
+  font-size: 1.6rem;
+  font-size: 16px;
+
+}
+
+@mixin font-size-medium {
+  font-size: 1.8rem;
+  font-size: 18px;
+}
+
+@mixin font-size-x-medium {
+  font-size: 2.1rem;
+  font-size: 21px;
+}
+
+@mixin font-size-large {
+  font-size: 2.4rem;
+  font-size: 24px;
+
+}
+
+@mixin font-size-x-large {
+  font-size: 3.2rem;
+  font-size: 32px;
+}
+
+@mixin font-size-xx-large {
+  font-size: 4.8rem;
+  font-size: 48px;
+}
+
+@mixin font-size-xxx-large {
+  font-size: 6.4rem;
+  font-size: 64px;
+}
+
+@mixin radius($val) {
+  -webkit-border-radius: $val;
+	-moz-border-radius: $val;
+	-o-border-radius: $val;
+	-ms-border-radius: $val;
+	border-radius: $val;
+}
+
+@mixin transition($prop, $time, $method, $delay) {
+
+  -webkit-transition: $prop $time $method $delay;
+  -moz-transition: $prop $time $method $delay;
+  -ms-transition: $prop $time $method $delay;
+  -o-transiton: $prop $time $method $delay;
+  transition: $prop $time $method $delay;
+
+}
+
+@mixin border($w, $s, $c) {
+  border-width: $w;
+  border-color: $c;
+  border-style: $s;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+  padding-right: $right;
+  padding-left: $left;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin rotate-and-scale($scale, $rotation) {
+  transform: scale($scale) rotate($rotation);
+  -webkit-transform: scale($scale) rotate($rotation);
+	-moz-transform: scale($scale) rotate($rotation);
+	-ms-transform: scale($scale) rotate($rotation);
+	-o-transform: scale($scale) rotate($rotation);
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color, $inset: false){
+  @if $inset {
+    -webkit-box-shadow:inset $horizontal, $vertical, $blur, $color;
+    -moz-box-shadow:inset $horizontal, $vertical, $blur, $color;
+    box-shadow:inset $horizontal, $vertical, $blur, $color;
+  } @else {
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+    box-shadow: $horizontal $vertical $blur $spread $color;
+  }
+}
+
+//H2, H3
+@mixin subheading {
+  text-transform: uppercase;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  @include font-size-x-medium;
+  line-height: 25px;
+  position: relative;
+  border-bottom: 1px solid $white;
+  color: $sand;
+  @include padding(40px, 0, 10px,0);
+}
