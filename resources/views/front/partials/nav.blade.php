@@ -32,7 +32,11 @@
                              </span>
                          </span>
                          <span class="item-right">
-                             <button class="btn btn-xs btn-danger pull-right" >x</button>
+                         <form method="GET" action="{{url('cart/update')}}">
+                              <input type="hidden" name="product_id" value="{{ $item->id }}">
+                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                             <button type="submit" class="btn btn-xs btn-danger pull-right" >x</button>
+                          </form>
                          </span>
                      </span>
                    </li>

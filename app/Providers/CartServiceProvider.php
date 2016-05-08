@@ -3,13 +3,21 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Cart;
 
 class CartServiceProvider extends ServiceProvider
 {
-
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
     public function boot()
     {
-        # code...
+        view()->composer(
+            ['*'],
+            'App\Http\ViewComposers\CartComposer'
+        );
     }
 
     /**
@@ -19,6 +27,6 @@ class CartServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('view')->composer('front.layouts.app', 'App\Http\ViewComposers\CartComposer');
+        //
     }
 }

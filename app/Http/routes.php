@@ -19,51 +19,27 @@
  * @author Johan
  */
 
-Route::get('/', 'HomeController@index');
-Route::get('home', 'HomeController@home');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 Route::get('products', 'ProductController@index');
 Route::get('categories', 'CategoryController@index');
 Route::get('checkout', 'CheckoutController@index');
-
-
-/**
- *  Patterns
- *
- * @author Mezai
- */
-
-Route::pattern('id', '[0-9]+');
-
-Route::get('login', function () {
-  return view('front.auth.login');
-});
-
-
-/**
- * Admin routes
- * @author Mezai
- */
 Route::post('cart/add', 'CartController@add');
-Route::get('cart/destroy', 'CartController@destroy');
-Route::post('cart/remove', 'CartController@remove');
-Route::resource('cart', 'CartController');
-
-Route::get('/admin/login', 'Admin\AuthController@showLoginForm');
-Route::post('/admin/login', 'Admin\AuthController@login');
-
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-  //Dashboard
-  Route::get('dashboard', 'DashboardController@index');
-  Route::get('logout', 'Admin\AuthController@logout');
 
 
+Route::group(['middleware' => 'web'], function() {
+
+	Route::group(['namespace' => 'front'], function() {
+		require (__DIR__ . '/Routes/Front/Front.php');
+        require (__DIR__ . '/Routes/Front/Access.php');
+	});
 });
 
-Route::group(['middleware' => 'web'], function () {
-    Route::auth();
-    Route::get('/home', 'HomeController@index');
 
+
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+
+Route::get('dashboard', 'Admin\DashboardController@index');
 
 });

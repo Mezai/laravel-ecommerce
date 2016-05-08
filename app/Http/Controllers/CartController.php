@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Product;
 use Cart;
+use View;
 
 class CartController extends Controller
 {
 
+ 
 
     /**
      * Add a product to the cart
@@ -27,7 +29,7 @@ class CartController extends Controller
         }
         $cart = Cart::content();
 
-        return redirect()->back()->with(compact('cart'));
+        return redirect()->back();
     }
 
     /**
