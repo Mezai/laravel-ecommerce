@@ -24,8 +24,6 @@ Route::get('contact', 'PagesController@contact');
 Route::get('products', 'ProductController@index');
 Route::get('categories', 'CategoryController@index');
 Route::get('checkout', 'CheckoutController@index');
-
-Route::post('cart/add', 'CartController@add');
 Route::resource('cart', 'CartController');
 
 

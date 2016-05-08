@@ -24,10 +24,12 @@
 
 </head>
 <body>
+  <div id="wrap">
   @include('front.partials.nav')
 
   <div class="container">
   @yield('content')
+  </div>
   </div>
   @include('front.partials.footer')
 

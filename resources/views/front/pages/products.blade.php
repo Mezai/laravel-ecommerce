@@ -18,10 +18,10 @@
                   <p>{{ formatPrice($product->getPrice()) }}</p>
                   <div class="row">
                   <div class="col-xs-6">
-                  {!! Form::open(['route' => 'cart.store']) !!}
+                  {{ Form::open(['route' => 'cart.store']) }}
                       {{ Form::hidden('product_id', $product->getId()) }}
                      {{ Form::submit('Add to cart', ['class' => 'btn btn-primary']) }}
-                  {!! Form::close() !!}
+                  {{ Form::close() }}
                   </div>
                   <div class="col-xs-6">
                       <a href="#" class="btn btn-default">More Info</a>

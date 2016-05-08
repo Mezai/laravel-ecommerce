@@ -1,5 +1,4 @@
-<footer class="navbar-static-bottom">
-    <div class="footer" id="footer">
+<footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
@@ -56,9 +55,8 @@
                         <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </div>
+          </div>
+     </div>
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left">Ecommerce app</p>

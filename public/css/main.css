@@ -121,9 +121,10 @@
 
 .footer {
   background: #5e412f;
-  height: auto;
+  height: 340px;
+  bottom: 0;
   padding-bottom: 30px;
-  position: relative;
+  position: absolute;
   width: 100%;
   border-bottom: 1px solid #5e412f;
   border-top: 1px solid #5e412f; }
@@ -231,6 +232,7 @@
 .footer-bottom {
   background: #fcebb6;
   border-top: 1px solid #000000;
+  margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 0;
@@ -248,3 +250,13 @@
 
 html, body {
   font-family: "Open Sans", sans-serif; }
+
+/*Base*/
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  height: 100%; }
+  body > #wrap > .container {
+    margin-bottom: 340px; }

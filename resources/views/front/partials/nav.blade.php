@@ -18,7 +18,7 @@
         <li><a href="{{ URL::to('terms')}}">Terms</a></li>
         <li><a href="{{ URL::to('login') }}">Login</a></li>
         <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-cart"></span> {{ count($cart) }} items<span class="caret"></span></a>
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="fa fa-shopping-cart"></span> {{ Cart::count() }} items<span class="caret"></span></a>
                  <ul class="dropdown-menu dropdown-cart" role="menu">
                    @if(count($cart) > 0)
                    @foreach($cart as $item)
@@ -32,10 +32,10 @@
                              </span>
                          </span>
                          <span class="item-right">
-                         {!! Form::open([ 'method'  => 'delete', 'route' => [ 'cart.destroy', $item->id ] ]) !!}
+                         {{ Form::open([ 'method'  => 'delete', 'route' => [ 'cart.destroy', $item->id ] ]) }}
                             {{ Form::submit('X', ['class' => 'btn btn-xs btn-danger pull-right']) }}
 
-                         {!! Form::close() !!}
+                         {{ Form::close() }}
                          </span>
                      </span>
                    </li>

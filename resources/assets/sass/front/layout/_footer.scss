@@ -6,9 +6,10 @@
 
 .footer {
   background: $brown;
-  height: auto;
+  height: 340px;
+  bottom: 0;
   padding-bottom: 30px;
-  position: relative;
+  position: absolute;
   width: 100%;
   border-bottom: 1px solid $brown;
   border-top: 1px solid $brown;
@@ -104,6 +105,7 @@
 .footer-bottom {
   background: $sand;
   border-top: 1px solid $black;
+  margin-top: 30px;
   @include padding(10px, 0, 10px, 0);
   p.pull-left {
     padding-top: 6px;

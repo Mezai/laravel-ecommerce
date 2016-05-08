@@ -45,6 +45,15 @@ class CartController extends Controller
     public function update()
     {
         if (Request::isMethod('PATCH')) {
+            $product_id = Request::get('product_id');
+
+            $newQty = Request::get('inputQty');
+
+            $rowId = Cart::search(array('id' => $product_id));
+
+            Cart::update($rowId[0], (int)$newQty);
+
+            return back();
 
         }    
     }

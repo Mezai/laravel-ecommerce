@@ -1,0 +1,13 @@
+html {
+	position: relative;
+  min-height: 100%;
+
+}
+
+body {
+	height:100%;
+	> #wrap > .container {
+	margin-bottom: 340px;
+	
+	}
+}
