@@ -3,6 +3,7 @@
 @section('content')
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1">
+      @if(count($cart) > 0)
       <table class="table table-hover">
         <thead>
           <tr>
@@ -21,7 +22,6 @@
           </tr>
         </thead>
         <tbody>
-          @if(count($cart))
           @foreach($cart as $item)
           <tr>
             <td class="col-sm-8 col-md-6">
@@ -50,12 +50,12 @@
               </form>
             </td>
           </tr>
-          @endforeach
-          @else
-           <p>You have no products in cart</p>
-          @endif
+          @endforeach    
         </tbody>
       </table>
+      @else
+           <p>You have no products in cart</p>
+      @endif
     </div>
   </div>
 @endsection

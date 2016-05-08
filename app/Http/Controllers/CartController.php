@@ -22,6 +22,7 @@ class CartController extends Controller
 
     public function add()
     {
+
         if (Request::isMethod('post')) {
             $product_id = Request::get('product_id');
             $product = Product::find($product_id);
@@ -32,20 +33,7 @@ class CartController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Destroy the cart
-     * @param
-     * @return
-     * @author Mezai
-     */
-
-    public function destroy()
-    {
-        $cart = Cart::content();
-        Cart::destroy();
-
-        return view('front.pages.checkout', compact('cart'));
-    }
+    
 
     /**
      * Update a product in cart
@@ -56,23 +44,9 @@ class CartController extends Controller
 
     public function update()
     {
-        if (Request::isMethod('get')) {
-            $product_id = Request::get('product_id');
+        if (Request::isMethod('PATCH')) {
 
-            $rowId = Cart::search(array('id' => $product_id));
-
-            $item = Cart::get($rowId[0]);
-
-            if (Request::get('increment') === 1) {
-                Cart::update($rowId[0], $item->qty + 1);
-            } elseif (Request::get('decrement') === 1) {
-                Cart::update($rowId[0], $item->qty - 1);
-            }
-
-            $cart = Cart::content();
-
-            return view('front.pages.checkout', compact('cart'));
-        }
+        }    
     }
 
     /**
@@ -81,19 +55,16 @@ class CartController extends Controller
      * @return
      * @author Mezai
      */
-    public function remove()
+    public function destroy($productId)
     {
+        if (Request::isMethod('DELETE')) {
 
-        //get the id
-        if (Request::isMethod('post')) {
-            $product_id = Request::get('product_id');
-            $rowId = Cart::search(array('id' => $product_id));
+            $rowId = Cart::search(array('id' => $productId));
 
             Cart::remove($rowId[0]);
 
-            $cart = Cart::content();
+            return back();
+        }        
 
-            return view('front.pages.checkout', compact('cart'));
-        }
     }
 }
