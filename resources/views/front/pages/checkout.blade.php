@@ -54,7 +54,11 @@
         </tbody>
       </table>
       @else
-           <p>You have no products in cart</p>
+          <div class="alert alert-warning" role="alert">
+            <span class="fa fa-info-circle" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            You have no products in cart
+          </div>
       @endif
     </div>
   </div>

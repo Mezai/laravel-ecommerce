@@ -20,10 +20,10 @@ class CartController extends Controller
      * @author Mezai
      */
 
-    public function add()
+    public function store()
     {
 
-        if (Request::isMethod('post')) {
+        if (Request::isMethod('POST')) {
             $product_id = Request::get('product_id');
             $product = Product::find($product_id);
             Cart::add(array('id' => $product_id, 'name' => $product->title, 'qty' => 1, 'price' => $product->price));
