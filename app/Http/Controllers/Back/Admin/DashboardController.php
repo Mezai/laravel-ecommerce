@@ -1,18 +1,17 @@
 <?php
-namespace App\Http\Controllers\admin;
+
+namespace App\Http\Controllers\Back\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+
 use Auth;
 use App\Admin;
 
-class Employee extends Controller
+class DashboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('admin');
-    }
-
+    
+    
     public function index()
     {
         return view('back.pages.dashboard');

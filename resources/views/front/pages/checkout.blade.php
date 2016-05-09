@@ -23,6 +23,7 @@
         </thead>
         <tbody>
           @foreach($cart as $item)
+
           <tr>
             <td class="col-sm-8 col-md-6">
               <div class="media">
@@ -47,9 +48,9 @@
               
             </td>
             <td class="col-sm-1 col-md-1 text-center">
-              <strong>{{$item->price}}</strong>
+              <strong>{{ $item->price }}</strong>
             </td>
-            <td class="col-sm-1 col-md-1 text-center"><strong>{{$item->price}}</strong></td>
+            <td class="col-sm-1 col-md-1 text-center"><strong>{{ $item->subtotal }}</strong></td>
             <td class="col-sm-1 col-md-1">
 
             {{ Form::open(['method' => 'delete', 'route' => ['cart.destroy', $item->id]])}}

@@ -1,13 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use Illuminate\Routing\Controller;
+
+use Auth;
+use App\Admin;
 
 class DashboardController extends Controller
 {
 
+	public function __construct(){
+		$this->middleware('admin');
+	}	
     public function index()
     {
 
