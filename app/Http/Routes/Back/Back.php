@@ -1,15 +1,7 @@
 <?php
+Route::group(['namespace' => 'Admin'], function () {
 
-
-Route::group(['middleware' => 'admin'], function() {
-	Route::group(['namespace' => 'Admin'], function() {
-	Route::get('logout','AuthController@logout');
-
-	
-
-	});
-
+	Route::get('dashboard', 'DashboardController@index')->name('back.pages.dashboard');
+	Route::post('dashboard', 'DashboardController@index')->name('back.pages.dashboard');
+	Route::resource('products', 'ProductsController');
 });
-
-
-	

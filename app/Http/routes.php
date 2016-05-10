@@ -34,15 +34,12 @@ Route::group(['middleware' => 'web'], function() {
         require (__DIR__ . '/Routes/Front/Access.php');
 	});
 });
-Route::get('admin/dashboard', 'Back\Admin\DashboardController@index');
-Route::post('admin/dashboard', 'Back\Admin\DashboardController@index');
 
 
 
-Route::group(['middleware' => 'web'], function() {
-	Route::group(['namespace' => 'back', 'prefix' => 'admin'], function() {
-		
+Route::group(['namespace' => 'back', 'prefix' => 'admin'], function () {
+	
 		require (__DIR__ . '/Routes/Back/Back.php');
+		
 		require (__DIR__ . '/Routes/Back/Access.php');
-	});
 });
