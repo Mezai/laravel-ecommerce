@@ -27,7 +27,9 @@ elixir(function(mix) {
 
   //Admin CSS  & JS
   mix.scripts([
-
+    '../../../' + paths.jquery + '/jquery.min.js',
+     '../../../' + paths.bootstrap + '/js/bootstrap.js',
+    'admin.js',
   ], 'public/js/admin.js');
 
   mix.sass([

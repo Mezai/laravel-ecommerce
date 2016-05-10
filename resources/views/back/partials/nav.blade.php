@@ -33,7 +33,7 @@
 							<li class=""><a href="#">Other Link</a></li>
 							<li class=""><a href="#">Other Link</a></li>
 							<li class="divider"></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="{{ URL::to('admin/logout')}}">Logout</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -9,11 +9,31 @@
     Products
   </div>
   <div class="panel-body">
-    @foreach($products as $product)
-
-    <p>{{ $product->getTitle() }}</p>
-
-    @endforeach
+  <div class="col-xs-12">
+  <div class="box">
+    
+    <table class="table">
+        <tbody>
+        	<tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>Edit</th>
+            </tr>
+            @foreach($products as $product)
+            <tr>
+            <td>{{ $product->getId() }}</td>
+            <td>{{ $product->getTitle() }}</td>
+            <td><span class="label label-success">Active</span></td>
+            <td>{{ $product->getPrice() }}</td>
+            <td>{!! Html::linkAction('Back\Admin\ProductsController@show', 'Edit', array($product->id)) !!}</td>
+           </tr>
+           @endforeach   
+        </tbody>
+    </table>
+    </div>
+	</div>
   </div>
 </div>
 

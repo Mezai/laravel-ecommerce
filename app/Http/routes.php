@@ -37,7 +37,7 @@ Route::group(['middleware' => 'web'], function() {
 
 
 
-Route::group(['namespace' => 'back', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'Back', 'prefix' => 'admin'], function () {
 	
 		require (__DIR__ . '/Routes/Back/Back.php');
 		

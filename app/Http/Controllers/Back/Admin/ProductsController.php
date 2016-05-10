@@ -16,13 +16,19 @@ class ProductsController extends Controller {
 	public function index()
 	{
 		$products = Product::all();
-
 		return view('back.pages.products', compact('products'));
 	}
 
-	public function store()
+	public function show()
 	{
-		# code...
+		//dd($product->getTitle());
+
+		return 'hello';
+	}
+
+	public function edit(Product $product)
+	{
+		return 'hello';
 	}
 	public function create()
 	{
