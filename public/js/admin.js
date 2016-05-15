@@ -3084,5 +3084,6 @@ $(document).ready(function() {
 		'offText' : 'Disabled',
 		'onColor' : 'success',
 		'offColor' : 'danger',
+		'radioAllOff' : true,
 	});
 });

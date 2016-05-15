@@ -40,7 +40,7 @@ class ProductsController extends Controller {
 
 		$product->update($request->all());
 
-		return redirect('admin/products');
+		return $request->all();
 	}
 
 	public function create()

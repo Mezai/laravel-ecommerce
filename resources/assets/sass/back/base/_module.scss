@@ -1,4 +1,13 @@
-html, body {
+html {
+	position: relative;
+  	min-height: 100%;
+} 
+
+body {
 
 	height: 100%;
+	margin-bottom: 60px;
+	> #wrap > .container {
+    margin-bottom: 60px;
+  }
 }

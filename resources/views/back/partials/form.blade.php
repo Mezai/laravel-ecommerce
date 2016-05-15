@@ -7,7 +7,7 @@
   	<div class="form-group">
   	  	{!! Form::label('active', 'Active:') !!}
          <div class="make-switch">
-  		    {!! Form::checkbox('active', 1, null, ['class' => 'form-control']) !!}
+  		    {!! Form::radio('active', null, null, ['class' => 'form-control']) !!}
           </div>
   	</div>
 

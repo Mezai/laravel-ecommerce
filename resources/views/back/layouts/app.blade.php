@@ -23,6 +23,7 @@
 
 </head>
 <body>
+  <div id="wrap">
   @include('back.partials.nav')
   <div class="container-fluid main-container">
   		<div class="col-md-2 sidebar">
@@ -36,8 +37,9 @@
 
     <div class="col-md-10 content">
       @yield('content')
+      </div>
     </div>
-</div>
+  </div>
   @include('back.partials.footer')
 
   @yield('scripts')
