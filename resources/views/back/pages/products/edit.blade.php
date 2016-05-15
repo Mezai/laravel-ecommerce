@@ -6,14 +6,14 @@
 @section('content')
 <div class="panel panel-default">
   <div class="panel-heading">
-    Create new product
+    Edit: {!! $product->getTitle() !!}
   </div>
   <div class="panel-body">
 
-	   {!! Form::open(['url' => 'admin/products', 'files' => true]) !!}
+	   {!! Form::model($product, ['method' => 'PATCH', 'action' => ['Back\Admin\ProductsController@update', $product->id]]) !!}
   	
 
-      @include ('back.partials.form', ['submitButtonText' => 'Create product'])
+      @include ('back.partials.form', ['submitButtonText' => 'Update product'])
 
 
   	{!! Form::close() !!}

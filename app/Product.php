@@ -12,7 +12,7 @@ class Product extends Model implements ProductInterface
      * @author Mezai
      */
     protected $fillable = [
-      'title', 'description', 'updated_at'
+      'title', 'description', 'price', 'active', 'updated_at'
     ];
 
     public function getTitle()

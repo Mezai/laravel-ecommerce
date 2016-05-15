@@ -6,8 +6,9 @@ namespace App\Http\Controllers\Back\Admin;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Http\Requests;
-use Request;
-
+use App\Http\Requests\CreateProductRequest;
+use Illuminate\Support\Facades\Input;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ProductsController extends Controller {
 	
@@ -26,22 +27,37 @@ class ProductsController extends Controller {
 		return view('back.pages.products.show', compact('product'));
 	}
 
-	public function edit(Product $product)
+	public function edit($id)
 	{
-		return 'hello';
+		$product = Product::findOrFail($id);
+
+		return view('back.pages.products.edit', compact('product'));
+	}
+
+	public function update($id, CreateProductRequest $request)
+	{
+		$product = Product::findOrFail($id);
+
+		$product->update($request->all());
+
+		return redirect('admin/products');
 	}
 
 	public function create()
 	{
 		return view('back.pages.products.create');
 	}
-	public function store()
+	public function store(CreateProductRequest $request)
 	{
-		$input = Request::all();
+		$product = Product::create($request->all());
 
-		Product::create($input);
 
-		return back();
+		$path = public_path('img')."/";
+		
+		Image::make(Input::file('image'))->resize(300, 200)->save($path.$product->id.'.png');
+
+		
+		return redirect('admin/products');
 	}
 
 }

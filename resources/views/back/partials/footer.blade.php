@@ -1,6 +1,6 @@
-<div class="navbar navbar-default navbar-fixed-bottom">
+<footer class="footer">
   <div class="container">
     <p class="navbar-text pull-left">
       Admin ecommerce
     </p>
-</div>
+</footer>
