@@ -16,6 +16,8 @@ var paths = {
   'jquery': 'bower_components/jquery/dist',
   'bootstrap': 'bower_components/bootstrap/dist',
   'jquery_ui': 'bower_components/jquery-ui',
+  'switch_js': 'bower_components/bootstrap-switch/dist/js',
+  'switch_css': 'bower_components/bootstrap-switch/dist/css',
   'app_scripts': ''
 };
 
@@ -29,6 +31,7 @@ elixir(function(mix) {
   mix.scripts([
     '../../../' + paths.jquery + '/jquery.min.js',
      '../../../' + paths.bootstrap + '/js/bootstrap.js',
+     '../../../' + paths.switch_js + '/bootstrap-switch.js',
     'admin.js',
   ], 'public/js/admin.js');
 
@@ -37,7 +40,8 @@ elixir(function(mix) {
   ], 'resources/assets/css/back/admin.css');
 
   mix.styles([
-      'back/admin.css'
+      '../../../' + paths.switch_css + '/bootstrap3/bootstrap-switch.css',
+      'back/admin.css',
   ], 'public/css/admin.css');
 
 
@@ -48,6 +52,7 @@ elixir(function(mix) {
      '../../../' + paths.jquery + '/jquery.min.js',
      '../../../' + paths.bootstrap + '/js/bootstrap.js',
      '../../../' + paths.jquery_ui + '/jquery-ui.min.js',
+
      'main.js',
   ], 'public/js/app.js');
 

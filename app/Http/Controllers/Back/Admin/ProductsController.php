@@ -16,22 +16,32 @@ class ProductsController extends Controller {
 	public function index()
 	{
 		$products = Product::all();
-		return view('back.pages.products', compact('products'));
+		return view('back.pages.products.index', compact('products'));
 	}
 
-	public function show()
+	public function show($id)
 	{
-		//dd($product->getTitle());
+		$product = Product::findOrFail($id);
 
-		return 'hello';
+		return view('back.pages.products.show', compact('product'));
 	}
 
 	public function edit(Product $product)
 	{
 		return 'hello';
 	}
+
 	public function create()
 	{
-		return view('back.pages.products');
+		return view('back.pages.products.create');
 	}
+	public function store()
+	{
+		$input = Request::all();
+
+		Product::create($input);
+
+		return back();
+	}
+
 }

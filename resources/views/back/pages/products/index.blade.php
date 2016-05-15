@@ -19,7 +19,7 @@
             <th>Name</th>
             <th>Status</th>
             <th>Price</th>
-            <th>Edit</th>
+            <th>Show</th>
             </tr>
             @foreach($products as $product)
             <tr>
@@ -27,7 +27,7 @@
             <td>{{ $product->getTitle() }}</td>
             <td><span class="label label-success">Active</span></td>
             <td>{{ $product->getPrice() }}</td>
-            <td>{!! Html::linkAction('Back\Admin\ProductsController@show', 'Edit', array($product->id)) !!}</td>
+            <td>{!! Html::linkAction('Back\Admin\ProductsController@show', 'Show', array($product->id)) !!}</td>
            </tr>
            @endforeach   
         </tbody>

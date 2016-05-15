@@ -27,10 +27,11 @@ class CartController extends Controller
             $product_id = Request::get('product_id');
             $product = Product::find($product_id);
             Cart::add(array('id' => $product_id, 'name' => $product->title, 'qty' => 1, 'price' => $product->price));
+        
+            return back();
         }
-        $cart = Cart::content();
 
-        return redirect()->back();
+        
     }
 
     

@@ -13,6 +13,7 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('title');
             $table->string('description');
             $table->decimal('price', 20, 6)->default('0.000000');
@@ -20,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->boolean('available');
             $table->boolean('active')->default(false);
 
-            $table->increments('id')->unsigned();
+            
             $table->timestamps();
         });
     }
