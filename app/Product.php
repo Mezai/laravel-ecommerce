@@ -35,6 +35,11 @@ class Product extends Model implements ProductInterface
         return $this->price;
     }
 
+    public function getActive()
+    {
+        return $this->active;
+    }
+
     public function getImage()
     {
         return $this->image;

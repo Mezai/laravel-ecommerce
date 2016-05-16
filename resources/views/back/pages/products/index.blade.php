@@ -12,7 +12,7 @@
       </div>
       <div class="col col-xs-6 text-right">
         <button type="button" class="btn btn-default btn-md">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {!! Html::linkAction('Back\Admin\ProductsController@create', 'Add new') !!}
+          <i class="fa fa-plus" aria-hidden="true"></i> {!! Html::linkAction('Back\Admin\ProductsController@create', 'Add new') !!}
         </button>
       </div>
     </div>
@@ -34,7 +34,12 @@
             <tr>
             <td>{{ $product->getId() }}</td>
             <td>{{ $product->getTitle() }}</td>
+            @if ($product->getActive() == 1)
             <td><span class="label label-success">Active</span></td>
+            @else
+            <td><span class="label label-danger">Disabled</span></td>             
+            @endif  
+
             <td>{{ $product->getPrice() }}</td>
             <td><div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select action
