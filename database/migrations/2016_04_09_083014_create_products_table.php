@@ -16,9 +16,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
+            $table->string('image');
             $table->decimal('price', 20, 6)->default('0.000000');
             $table->string('reference');
-            $table->boolean('available');
             $table->boolean('active')->default(false);
 
             

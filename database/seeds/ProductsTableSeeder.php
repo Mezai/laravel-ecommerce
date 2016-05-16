@@ -19,7 +19,6 @@ class ProductsTableSeeder extends Seeder
             'title' => $faker->sentence(5),
             'description' => $faker->paragraph(3),
             'price' => $faker->numberBetween(20, 100),
-            'available' => $faker->boolean(60),
             'active' => $faker->boolean(50),
             'reference' => $faker->numberBetween(1, 20),
             'created_at' => $faker->dateTime('now')

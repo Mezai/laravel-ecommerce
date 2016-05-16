@@ -10,7 +10,7 @@
   </div>
   <div class="panel-body">
 
-	   {!! Form::model($product, ['method' => 'PATCH', 'action' => ['Back\Admin\ProductsController@update', $product->id]]) !!}
+	   {!! Form::model($product, ['method' => 'PATCH', 'files'=>true, 'action' => ['Back\Admin\ProductsController@update', $product->id]]) !!}
   	
 
       @include ('back.partials.form', ['submitButtonText' => 'Update product'])

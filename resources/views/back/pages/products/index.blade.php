@@ -6,8 +6,17 @@
 @section('content')
 <div class="panel panel-default">
   <div class="panel-heading">
-    Products
-  </div>
+    <div class="row">
+      <div class="col col-xs-6">
+        Products
+      </div>
+      <div class="col col-xs-6 text-right">
+        <button type="button" class="btn btn-default btn-md">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {!! Html::linkAction('Back\Admin\ProductsController@create', 'Add new') !!}
+        </button>
+      </div>
+    </div>
+</div>
   <div class="panel-body">
   <div class="col-xs-12">
   <div class="box">

@@ -2,62 +2,81 @@
 
 namespace App\Http\Controllers\Back\Admin;
 
-
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Http\Requests;
 use App\Http\Requests\CreateProductRequest;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Http\Request;
 
-class ProductsController extends Controller {
-	
-	
+class ProductsController extends Controller
+{
+    public function index()
+    {
+        $products = Product::all();
+        return view('back.pages.products.index', compact('products'));
+    }
 
-	public function index()
-	{
-		$products = Product::all();
-		return view('back.pages.products.index', compact('products'));
-	}
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
 
-	public function show($id)
-	{
-		$product = Product::findOrFail($id);
+        return view('back.pages.products.show', compact('product'));
+    }
 
-		return view('back.pages.products.show', compact('product'));
-	}
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
 
-	public function edit($id)
-	{
-		$product = Product::findOrFail($id);
+        return view('back.pages.products.edit', compact('product'));
+    }
 
-		return view('back.pages.products.edit', compact('product'));
-	}
+    public function update($id, CreateProductRequest $request)
+    {
+        $product = Product::findOrFail($id);
+        
+        
+        $formRequest = $request->except('image');
+        
+        if (!isset($formRequest['active'])) {
+            $formRequest['active'] = '0';
+        }
 
-	public function update($id, CreateProductRequest $request)
-	{
-		$product = Product::findOrFail($id);
+        $product->update($formRequest);
 
-		$product->update($request->all());
+        $this->saveImage($product->id, $request);
 
-		return $request->all();
-	}
+        return redirect('admin/products');
+    }
 
-	public function create()
-	{
-		return view('back.pages.products.create');
-	}
-	public function store(CreateProductRequest $request)
-	{
-		$product = Product::create($request->all());
+    public function create()
+    {
+        return view('back.pages.products.create');
+    }
+    public function store(CreateProductRequest $request)
+    {
+        $product = Product::create($request->except('image'));
 
+        $this->saveImage($product->id, $request);
+        
+        return redirect('admin/products');
+    }
 
-		$path = public_path('img')."/";
-		
-		Image::make(Input::file('image'))->resize(300, 200)->save($path.$product->id.'.png');
+    private function saveImage($id, CreateProductRequest $request)
+    {
+        $product = Product::findOrFail($id);
 
-		
-		return redirect('admin/products');
-	}
+        $image = $request->file('image');
+        
+        $imageName = $image->getClientOriginalName();
+        
+        $product->image = $imageName;
+        
+        $product->save();
 
+        $path = public_path('img')."/";
+        
+        Image::make(Input::file('image'))->resize(300, 200)->save($path.$imageName);
+    }
 }

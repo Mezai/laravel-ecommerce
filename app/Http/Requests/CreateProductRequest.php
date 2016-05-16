@@ -26,7 +26,8 @@ class CreateProductRequest extends Request
         return [
             'title' => 'required',
             'price' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'image' => 'required|mimetypes:image/png,image/jpeg'
         ];
     }
 }

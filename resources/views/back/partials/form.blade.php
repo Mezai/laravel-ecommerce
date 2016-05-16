@@ -7,8 +7,8 @@
   	<div class="form-group">
   	  	{!! Form::label('active', 'Active:') !!}
          <div class="make-switch">
-  		    {!! Form::radio('active', null, null, ['class' => 'form-control']) !!}
-          </div>
+  		    {!! Form::radio('active', 1, null, ['class' => 'form-control']) !!}
+        </div>
   	</div>
 
     <div class="form-group">

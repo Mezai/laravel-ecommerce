@@ -46,7 +46,7 @@ elixir(function(mix) {
 
 
 
-  // Site CSS & JS
+  // Front CSS & JS
 
   mix.scripts([
      '../../../' + paths.jquery + '/jquery.min.js',
@@ -60,6 +60,8 @@ elixir(function(mix) {
     '../../../' + paths.bootstrap + '/css/bootstrap.css'
 
   ], 'public/css/app.css');
+
+  mix.copy('bower_components/bootstrap/fonts', 'public/fonts/bootstrap');
 
   mix.browserSync({proxy:'http://localhost/ecommerce-app/public'});
   mix.sass('front/main.scss');
