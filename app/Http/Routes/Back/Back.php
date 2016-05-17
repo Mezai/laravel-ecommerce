@@ -19,7 +19,8 @@ Route::group(['middleware' => 'admin'], function(){
 		]] , ['names' => [
 		'index' => 'back.pages.customers.index',
 		'create' => 'back.pages.customers.create',
-		'update' => 'back.pages.customers.update',	
+		'update' => 'back.pages.customers.update',
+		'show' => 'back.pages.customers.show',	
 
 	]]);
 

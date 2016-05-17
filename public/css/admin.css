@@ -288,6 +288,9 @@ body {
   .panel-default > .panel-heading {
     background: #f05b47; }
 
+.form-delete {
+  display: inline-block; }
+
 /* Base */
 html {
   position: relative;

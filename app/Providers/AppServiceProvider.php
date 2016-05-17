@@ -17,9 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('back.partials.sidebar', function($view){
-            $view->with('total_products', Product::all()->count());
-        });
+        
     }
 
     /**

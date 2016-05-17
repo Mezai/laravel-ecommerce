@@ -24,5 +24,10 @@ class CustomersController extends Controller
 		# code...
 	}
 
+	public function create()
+	{
+		return view('back.pages.customers.create');
+	}
+
 
 }
