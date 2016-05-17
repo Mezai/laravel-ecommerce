@@ -39,7 +39,6 @@
             @else
             <td><span class="label label-danger">Disabled</span></td>             
             @endif  
-
             <td>{{ $product->getPrice() }}</td>
             <td><div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select action

@@ -12,6 +12,24 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+
+    private function saveImage($id, CreateProductRequest $request)
+    {
+        $product = Product::findOrFail($id);
+
+        $image = $request->file('image');
+        
+        $imageName = $image->getClientOriginalName();
+        
+        $product->image = $imageName;
+        
+        $product->save();
+
+        $path = public_path('img')."/";
+        
+        Image::make(Input::file('image'))->resize(300, 200)->save($path.$imageName);
+    }
+    
     public function index()
     {
         $products = Product::all();
@@ -63,20 +81,12 @@ class ProductsController extends Controller
         return redirect('admin/products');
     }
 
-    private function saveImage($id, CreateProductRequest $request)
+    public function destroy($id)
     {
         $product = Product::findOrFail($id);
 
-        $image = $request->file('image');
-        
-        $imageName = $image->getClientOriginalName();
-        
-        $product->image = $imageName;
-        
-        $product->save();
+        $product->delete();
 
-        $path = public_path('img')."/";
-        
-        Image::make(Input::file('image'))->resize(300, 200)->save($path.$imageName);
+        return redirect('admin/products');
     }
 }

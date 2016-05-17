@@ -14,5 +14,15 @@ Route::group(['middleware' => 'admin'], function(){
     	'update' => 'back.pages.products.update'
 	]]);
 
+	Route::resource('customers', 'CustomersController', ['parameters' => [
+			'customers' => 'id'
+		]] , ['names' => [
+		'index' => 'back.pages.customers.index',
+		'create' => 'back.pages.customers.create',
+		'update' => 'back.pages.customers.update',	
+
+	]]);
+
+
 	});
 });
