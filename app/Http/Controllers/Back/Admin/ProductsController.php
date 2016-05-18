@@ -32,7 +32,7 @@ class ProductsController extends Controller
     
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(10);
         return view('back.pages.products.index', compact('products'));
     }
 
