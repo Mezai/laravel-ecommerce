@@ -24,6 +24,15 @@ Route::group(['middleware' => 'admin'], function(){
 
 	]]);
 
+	Route::resource('categories', 'CategoriesController', ['parameters' => [
+			'categories' => 'id'
+		]], ['names' => [
+		'index' => 'back.pages.categories.index',
+		'create' => 'back.pages.categories.create',
+		'update' => 'back.pages.categories.update',
+		'show' => 'back.pages.categories.show',
+	]]);
+
 
 	});
 });
