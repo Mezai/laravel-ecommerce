@@ -27,7 +27,7 @@
           <tr>
             <td class="col-sm-8 col-md-6">
               <div class="media">
-                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="" style="width: 70px; height: 70px;"> </a>
 
                 <div class="media-body">
                   <h4 class="media-heading">{{$item->name}}</h4>
@@ -76,18 +76,14 @@
   <div class="row">
     <div class="col-sm-12 col-md-10 col-md-offset-1">
   <form class="form-horizontal">
-<fieldset>
-
-
-<legend>Billing address</legend>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="firstname">Firstname</label>
-  <div class="col-md-4">                     
-    <input type="text" name="firstname" class="form-control input-md" id="firstname">
-  </div>
-</div>
+    <fieldset>
+      <legend>Billing address</legend>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="firstname">Firstname</label>
+          <div class="col-md-4">                     
+            <input type="text" name="firstname" class="form-control input-md" id="firstname">
+          </div>
+        </div>
 
 <!-- Text input-->
 <div class="form-group">
@@ -107,13 +103,6 @@
   </div>
 </div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
-  <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Send</button>
-  </div>
-</div>
 
 </fieldset>
 </form>

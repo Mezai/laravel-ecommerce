@@ -10,11 +10,9 @@ class CustomersController extends Controller
 {
 	public function index()
 	{
-		$customers = User::all();
-
-		$paginate = User::paginate(10);
+		$customers = User::paginate(10);
 		
-        return view('back.pages.customers.index', ['customers' => $customers, 'pagination' => $paginate]);
+        return view('back.pages.customers.index', ['customers' => $customers, 'pagination' => $customers]);
 	}
 
 	public function show()

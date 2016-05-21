@@ -16,12 +16,12 @@ class PagesController extends Controller
     {
         //Query db for all products
 
-      return view('frontend.pages.products');
+      return view('front.pages.products');
     }
 
     public function categories()
     {
         //fetch the categories for db and return them
-      return view('frontend.pages.categories');
+      return view('front.pages.categories');
     }
 }

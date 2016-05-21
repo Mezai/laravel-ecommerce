@@ -32,11 +32,10 @@ class ProductsController extends Controller
     
     public function index()
     {
-        $products = Product::all();
 
-        $paginate = Product::paginate(10);
+        $products = Product::paginate(10);
             
-        return view('back.pages.products.index', ['pagination' => $paginate, 'products' => $products]);
+        return view('back.pages.products.index', ['pagination' => $products, 'products' => $products]);
     }
 
     public function show($id)

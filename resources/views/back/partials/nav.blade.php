@@ -22,7 +22,7 @@
         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-				<li><a href="#" target="_blank">Visit Site</a></li>
+				<li><a href="{{ URL::to('/')}}" target="_blank">Visit Site</a></li>
 				<li class="dropdown ">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 						Account

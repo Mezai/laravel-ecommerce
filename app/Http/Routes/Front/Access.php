@@ -4,7 +4,7 @@ Route::group(['namespace' => 'Auth'], function(){
 	//Logged in
 	Route::group(['middleware' => 'auth'], function(){
 		
-		Route::get('logout', 'AuthController@logout')->name('auth.logout');
+		Route::get('logout', 'AuthController@logout');
 
 		Route::get('password/change', 'PasswordController@showChangePasswordForm')->name('auth.password.change');
 

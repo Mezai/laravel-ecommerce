@@ -25,6 +25,7 @@
 					<th class="hidden-xs">ID</th>
 					<th>Name</th>
 					<th>Email</th>
+					<th>Logged in</th>
 				</tr>
 			</thead>
 			@foreach ($customers as $customer)
@@ -38,6 +39,7 @@
 					<td class="hidden-xs">{{ $customer->getId() }}</td>
 					<td>{{ $customer->getName() }}</td>
 					<td>{{ $customer->getEmail() }}</td>
+					<td><span><i class="fa fa-check-circle"></i></span></td>
 				</tr>
 			</tbody>
 			@endforeach
