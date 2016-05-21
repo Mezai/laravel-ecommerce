@@ -49,4 +49,9 @@ class Product extends Model implements ProductInterface
     {
         return $this->id;
     }
+
+    public function images()
+    {
+        return $this->belongsTo('App\ProductImage');
+    }
 }

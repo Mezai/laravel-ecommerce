@@ -39,7 +39,11 @@
 					<td class="hidden-xs">{{ $customer->getId() }}</td>
 					<td>{{ $customer->getName() }}</td>
 					<td>{{ $customer->getEmail() }}</td>
+					@if ($customer->isActive()) 
 					<td><span><i class="fa fa-check-circle"></i></span></td>
+					@else
+					<td><span><i class="fa fa-power-off" aria-hidden="true"></i></span></td>
+					@endif
 				</tr>
 			</tbody>
 			@endforeach

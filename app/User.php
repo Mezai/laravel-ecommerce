@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Cache;
 class User extends Authenticatable
 {
     /**
@@ -39,5 +39,10 @@ class User extends Authenticatable
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function isActive()
+    {
+        return Cache::has('user-is-online-' . $this->id);
     }
 }
