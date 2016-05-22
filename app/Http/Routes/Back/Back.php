@@ -34,5 +34,15 @@ Route::group(['middleware' => 'admin'], function(){
 	]]);
 
 
+	Route::resource('orders', 'OrdersController', ['parameters' => [
+		'orders' => 'id'
+		]], ['names' => [
+		'index' => 'back.pages.orders.index',
+		'create' => 'back.pages.orders.create',
+		'show' => 'back.pages.orders.show',
+		'update' => 'back.pages.orders.update',
+ 
+		]]);
+
 	});
 });

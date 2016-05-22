@@ -21,7 +21,8 @@ class ProductsTableSeeder extends Seeder
             'price' => $faker->numberBetween(20, 100),
             'active' => $faker->boolean(50),
             'reference' => $faker->numberBetween(1, 20),
-            'created_at' => $faker->dateTime('now')
+            'created_at' => $faker->dateTimeBetween('-5 years', 'now'),
+            'updated_at' => $faker->dateTimeBetween('-2 years', 'now')
 
           ]);
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\ProductInterface;
 use Illuminate\Database\Eloquent\Model;
@@ -18,6 +18,16 @@ class Category extends Model implements ProductInterface
     public function getTitle()
     {
         return $this->title;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getActive()
+    {
+        return $this->active;
     }
 
     public function getDescription()

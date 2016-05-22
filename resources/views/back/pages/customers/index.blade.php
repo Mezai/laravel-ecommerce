@@ -17,8 +17,9 @@
 			</div>
 		</div>
 	</div>
+	@include ('back.partials.flash')
 	<div class="panel-body">
-		<table class="table table-striped table bordered table-list">
+		<table class="table table-striped table-bordered table-list">
 			<thead>
 				<tr>
 					<th><em class="fa fa-cog"></em></th>
@@ -32,7 +33,7 @@
 			<tbody>
 				<tr>
 					<td class="align-center">
-						<a href="#" class="btn btn-default"><em class="fa fa-pencil"></em></a>
+						<a href="{{ action('Back\Admin\CustomersController@edit', array($customer->id)) }}" class="btn btn-default"><em class="fa fa-pencil"></em></a>
 						<a href="#" class="btn btn-danger"><em class="fa fa-trash"></em></a>
 						<a href="#" class="btn btn-default"><em class="fa fa-eye"></em></a>
 					</td>

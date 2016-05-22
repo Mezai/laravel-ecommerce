@@ -7,7 +7,6 @@
     </div>
 </div>
 <div class="row text-center">
-{{ dd($products) }}
 @foreach($products as $product)
       <div class="col-md-3 col-sm-6 hero-feature">
           <div class="thumbnail">

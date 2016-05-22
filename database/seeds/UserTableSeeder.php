@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class UserTableSeeder extends Seeder
 {
@@ -11,10 +12,20 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+
+        $faker = Faker::create();
+
+        foreach (range(1, 10) as $index) {
+        
+        ($index % 2) ? $gender = 'male' : $gender = 'female';
+        
         Db::table('users')->insert([
-        'name' => 'Johan User',
-        'email' => 'user@test.com',
-        'password' => Hash::make('123456')
-      ]);
+            'name' => $faker->unique()->name($gender),
+            'username' => $faker->unique()->userName(),
+            'email' => $faker->unique()->email,
+            'password' => Hash::make('123456')
+        ]);
+
+        }
     }
 }

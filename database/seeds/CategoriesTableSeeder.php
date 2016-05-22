@@ -15,12 +15,13 @@ class CategoriesTableSeeder extends Seeder
         $faker = Faker::create();
 
 
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 20) as $index) {
             Db::table('categories')->insert([
               'title' => $faker->sentence(5),
               'description' => $faker->paragraph(3),
               'active' => $faker->boolean(50),
-              'created_at' => $faker->dateTime('now')
+              'created_at' => $faker->dateTimeBetween('-5 years', 'now'),
+              'updated_at' => $faker->dateTimeBetween('-2 years', 'now')
             ]);
         }
     }

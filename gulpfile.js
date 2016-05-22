@@ -20,6 +20,7 @@ var paths = {
   'fa_icons': './bower_components/font-awesome/css/font-awesome.min.css',
   'switch_js': './bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js',
   'switch_css': './bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css',
+  'chart_js': './bower_components/Chart.js/dist/Chart.min.js',
 };
 
 
@@ -33,6 +34,7 @@ elixir(function(mix) {
     paths.jquery,
     paths.bootstrap,
     paths.switch_js,
+    paths.chart_js,
     'admin.js',
   ], 'public/js/admin.js');
 
@@ -56,7 +58,6 @@ elixir(function(mix) {
      paths.jquery,
      paths.bootstrap,
      paths.jquery_ui,
-
      'main.js',
   ], 'public/js/app.js');
 

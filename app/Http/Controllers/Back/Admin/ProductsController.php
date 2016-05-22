@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Back\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Product;
+use App\Models\Product;
 use App\Http\Requests;
 use App\Http\Requests\CreateProductRequest;
 use Illuminate\Support\Facades\Input;

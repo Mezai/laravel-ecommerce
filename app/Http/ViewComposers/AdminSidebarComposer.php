@@ -3,8 +3,9 @@
 namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
-use App\Product;
-use App\User;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\Order;
 
 class AdminSidebarComposer {
 	
@@ -13,6 +14,7 @@ class AdminSidebarComposer {
 	{
 		$view->with('totalProducts', Product::count());
 		$view->with('totalCustomers', User::count());
+		$view->with('totalOrders', Order::count());
 	}
 }
 

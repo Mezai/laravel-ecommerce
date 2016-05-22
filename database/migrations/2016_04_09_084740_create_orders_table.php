@@ -14,6 +14,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->decimal('total_paid', 20, 6)->default('0.000000');
+            $table->string('payment');
+            $table->boolean('valid')->default(false);
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

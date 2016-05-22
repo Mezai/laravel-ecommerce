@@ -20,6 +20,7 @@
     "jquery-ui": "^1.11.4",
     "bootstrap": "^3.3.6",
     "bootstrap-switch": "^3.3.2",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "Chart.js": "^2.1.3"
   }
 }

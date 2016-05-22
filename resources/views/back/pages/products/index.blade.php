@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="panel-body">
-    <table class="table table-striped table bordered table-list">
+    <table class="table table-striped table-bordered table-list">
       <thead>
         <tr>
           <th><em class="fa fa-cog"></em></th>
