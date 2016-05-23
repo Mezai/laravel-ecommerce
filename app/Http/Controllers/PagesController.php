@@ -7,11 +7,7 @@ use App\Http\Requests;
 
 class PagesController extends Controller
 {
-    public function __construct()
-    {
-        parent__::construct();
-    }
-
+    
     public function products()
     {
         //Query db for all products

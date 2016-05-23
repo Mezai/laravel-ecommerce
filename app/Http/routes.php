@@ -18,6 +18,7 @@
  *
  * @author Johan
  */
+
 Route::get('/', 'HomeController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
@@ -26,6 +27,10 @@ Route::get('categories', 'CategoryController@index');
 Route::get('checkout', 'CheckoutController@index');
 Route::resource('cart', 'CartController');
 
+
+Route::group(['namespace' => 'Api'], function() {
+		require app_path('/Http/Routes/Api/Api.php');
+});
 
 Route::group(['middleware' => 'web'], function() {
 
@@ -43,3 +48,4 @@ Route::group(['namespace' => 'Back', 'prefix' => 'admin'], function () {
 		
 		require (__DIR__ . '/Routes/Back/Access.php');
 });
+

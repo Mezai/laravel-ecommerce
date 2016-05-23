@@ -28,7 +28,9 @@
             "App\\": "app/"
         },
         "files" : [
-            "app/Library/Helpers/helper.php"
+            "app/Library/Helpers/helper.php",
+            "app/Ecommerce/Transformers/Transformer.php",
+            "app/Ecommerce/Transformers/OrderTransformer.php"
         ]
     },
     "autoload-dev": {
