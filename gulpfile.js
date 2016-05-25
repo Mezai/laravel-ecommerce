@@ -75,4 +75,5 @@ elixir(function(mix) {
   mix.sass('front/main.scss');
 
 
+  mix.browserify('test.js');
 });

@@ -43,7 +43,7 @@
   @include('back.partials.footer')
 
   @yield('scripts')
-  <script src="{{ asset('js/admin.js') }}"></script>
+  
   
 </body>
 </html>

@@ -38,7 +38,7 @@ class OrdersController extends ApiController
         $orders = Order::whereBetween('created_at', [$from, $to])->get();
 
         return $this->respond([
-            'data' => $this->orderTransformer->transformCollection($orders->all())
+            'orders' => $this->orderTransformer->transform($orders->all())
         ]);
     }
 
