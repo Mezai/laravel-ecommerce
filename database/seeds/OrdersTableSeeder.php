@@ -17,7 +17,7 @@ class OrdersTableSeeder extends Seeder
 
     	$faker = Faker::create();
 
-    	foreach (range(1, 100) as $index) {
+    	foreach (range(1, 200) as $index) {
             DB::table('orders')->insert([
             'total_paid' => $faker->numberBetween(20, 200),
             'payment' => $faker->company(),

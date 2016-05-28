@@ -30,7 +30,8 @@
         "files" : [
             "app/Library/Helpers/helper.php",
             "app/Ecommerce/Transformers/Transformer.php",
-            "app/Ecommerce/Transformers/OrderTransformer.php"
+            "app/Ecommerce/Transformers/OrderTransformer.php",
+            "app/Ecommerce/Formatter/Formatter.php"
         ]
     },
     "autoload-dev": {

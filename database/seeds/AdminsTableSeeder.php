@@ -10,11 +10,11 @@ class AdminsTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
         Db::table('admins')->insert([
           'name' => 'Johan Admin',
           'email' => 'admin@test.com',
-          'password' => Hash::make('123456')
+          'password' => Hash::make('123456'),
         ]);
     }
 }

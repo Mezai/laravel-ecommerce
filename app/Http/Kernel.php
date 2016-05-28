@@ -35,7 +35,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\LogLastUserActivity::class,
         ],
         'api' => [
-            'throttle:60,1',
+            'throttle:120,1',
         ],
     ];
 

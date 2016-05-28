@@ -1,0 +1,1 @@
+import BootstrapSwitch from "bootstrap-switch";
