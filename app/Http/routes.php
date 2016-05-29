@@ -25,6 +25,9 @@ Route::get('contact', 'PagesController@contact');
 Route::get('products', 'ProductController@index');
 Route::get('categories', 'CategoryController@index');
 Route::get('checkout', 'CheckoutController@index');
+Route::post('payment/stripe', array('uses' => 'PaymentController@stripe'));
+Route::get('confirmation', 'ConfirmationController@success');
+Route::get('failed', 'ConfirmationController@failed');
 Route::resource('cart', 'CartController');
 
 

@@ -64,6 +64,37 @@
           @endforeach    
         </tbody>
       </table>
+      @include('front.partials.address')
+      @include('front.partials.payment')
+      @section('scripts')
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      <script type="text/javascript">
+        var $form = $('#stripe_charge');
+        var handler = StripeCheckout.configure({
+          key: "pk_test_jcJD8JNKh4ZifUSXimKJxyIE",
+          image: '',
+          locale: 'auto',
+          token: function(token) {
+            $form.append($('<input type="hidden" name="stripeToken"/>').val(token.id));
+            $form.submit();
+          }
+        });
+        $('#stripePayment').on('click', function(e) {
+          handler.open({
+            name: "Test",
+            currency: "sek",
+            description: "say something",
+            amount: 1000,
+          });
+          e.preventDefault();
+        });
+        $(window).on('popstate', function() {
+          handler.close();
+        });
+      </script>
+
+      @endsection
       @else
           <div class="alert alert-warning" role="alert">
             <span class="fa fa-info-circle" aria-hidden="true"></span>
@@ -72,40 +103,5 @@
           </div>
       @endif
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-10 col-md-offset-1">
-  <form class="form-horizontal">
-    <fieldset>
-      <legend>Billing address</legend>
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="firstname">Firstname</label>
-          <div class="col-md-4">                     
-            <input type="text" name="firstname" class="form-control input-md" id="firstname">
-          </div>
-        </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="lastname">Lastname</label>  
-  <div class="col-md-4">
-  <input id="lastname" name="lastname" type="text" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="address">Address</label>  
-  <div class="col-md-4">
-  <input id="address" name="address" type="text" placeholder="" class="form-control input-md" required="">
-    
-  </div>
-</div>
-
-
-</fieldset>
-</form>
-</div>
 </div>
 @endsection

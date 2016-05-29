@@ -31,7 +31,9 @@
             "app/Library/Helpers/helper.php",
             "app/Ecommerce/Transformers/Transformer.php",
             "app/Ecommerce/Transformers/OrderTransformer.php",
-            "app/Ecommerce/Formatter/Formatter.php"
+            "app/Ecommerce/Formatter/Formatter.php",
+            "app/Ecommerce/Payment/PaymentInterface.php",
+            "app/Ecommerce/Payment/StripePayment.php"
         ]
     },
     "autoload-dev": {

@@ -159,7 +159,8 @@ return [
         App\Providers\CartServiceProvider::class,
         App\Providers\SidebarServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        App\Providers\PaymentServiceProvider::class
 
     ],
 

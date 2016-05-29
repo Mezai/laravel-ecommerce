@@ -10,7 +10,7 @@
 @foreach($products as $product)
       <div class="col-md-3 col-sm-6 hero-feature">
           <div class="thumbnail">
-              {{ Html::image($image->product->path) }}
+              
               <div class="caption">
                   <h3>{{ $product->getTitle() }}</h3>
                   <p>{{ str_limit($product->getDescription(), 100) }}</p>

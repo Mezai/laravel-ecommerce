@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Product;
+use App\Models\Product;
 use Cart;
 use View;
 
@@ -35,6 +35,10 @@ class CartController extends Controller
     }
 
     
+    public function delete()
+    {
+        return Cart::destroy();
+    }
 
     /**
      * Update a product in cart
