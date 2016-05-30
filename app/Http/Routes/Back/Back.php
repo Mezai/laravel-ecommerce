@@ -4,6 +4,7 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('dashboard', 'DashboardController@index')->name('back.pages.dashboard');
 	Route::post('dashboard', 'DashboardController@index')->name('back.pages.dashboard');
 
+	Route::get('settings', 'SettingsController@index');
 
 	Route::resource('products', 'ProductsController', ['parameters' => [
 		'products' => 'id'

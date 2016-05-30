@@ -24,7 +24,7 @@ class StripePayment implements PaymentInterface
     {
         try {
             return Charge::create([
-                'amount' => 1000,
+                'amount' => $data['amount'],
                 'currency' => 'sek',
                 'description' => $data['email'],
                 'card' => $data['token']

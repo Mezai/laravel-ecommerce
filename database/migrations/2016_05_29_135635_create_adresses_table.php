@@ -12,7 +12,7 @@ class CreateAdressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adresses', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('firstname');
@@ -20,6 +20,7 @@ class CreateAdressesTable extends Migration
             $table->string('postcode', 12);
             $table->string('address', 128);
             $table->string('city', 64);
+            $table->string('country', 64);
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateAdressesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('adresses');
+        Schema::drop('addresses');
     }
 }

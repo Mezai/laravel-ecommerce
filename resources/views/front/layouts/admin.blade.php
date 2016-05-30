@@ -22,13 +22,21 @@
 
 </head>
 <body>
-@include('front.partials.admin.nav')
-	
-
+@include('front.user.partials.nav')
 <div class="container">
+<div class="row">
+
+@include('front.user.partials.sidebar')	
+
+
+<div class="col-md-9">
 	@yield('content')
+
 </div>
-@include('front.partials.admin.footer')
+
+</div>
+</div>
+@include('front.user.partials.footer')
 
 @yield('scripts')
 <script src="{{ asset('js/app.js') }}"></script>

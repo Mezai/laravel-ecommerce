@@ -26,7 +26,7 @@ Route::get('products', 'ProductController@index');
 Route::get('categories', 'CategoryController@index');
 Route::get('checkout', 'CheckoutController@index');
 Route::post('payment/stripe', array('uses' => 'PaymentController@stripe'));
-Route::get('confirmation', 'ConfirmationController@success');
+Route::get('confirmation/{payment}', array('uses' => 'ConfirmationController@success'));
 Route::get('failed', 'ConfirmationController@failed');
 Route::resource('cart', 'CartController');
 
@@ -35,13 +35,13 @@ Route::group(['namespace' => 'Api'], function() {
 		require app_path('/Http/Routes/Api/Api.php');
 });
 
-Route::group(['middleware' => 'web'], function() {
 
-	Route::group(['namespace' => 'front'], function() {
+
+Route::group(['namespace' => 'Front'], function() {
 		require (__DIR__ . '/Routes/Front/Front.php');
         require (__DIR__ . '/Routes/Front/Access.php');
-	});
 });
+
 
 
 

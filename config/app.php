@@ -160,7 +160,8 @@ return [
         App\Providers\SidebarServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        App\Providers\PaymentServiceProvider::class
+        App\Providers\PaymentServiceProvider::class,
+        App\Providers\NavbarServiceProvider::class,
 
     ],
 

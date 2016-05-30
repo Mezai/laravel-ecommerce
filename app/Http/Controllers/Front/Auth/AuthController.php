@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front\Auth;
 
-use App\User;
-use Auth;
+
+use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -34,10 +34,7 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-    }
+    
     /**
      * Get a validator for an incoming registration request.
      *
@@ -52,12 +49,6 @@ class AuthController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
     }
-
-    public function showLoginForm()
-    {
-        return view('front.auth.login');
-    }
-
     /**
      * Create a new user instance after a valid registration.
      *

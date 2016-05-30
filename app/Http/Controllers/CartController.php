@@ -34,10 +34,29 @@ class CartController extends Controller
         
     }
 
+
+    /**
+     * Delete all products in cart
+     * @param
+     * @return boolean
+     * @author Mezai
+     */
     
     public function delete()
     {
         return Cart::destroy();
+    }
+
+    /**
+     * Get cart total
+     * @param
+     * @return float
+     * @author Mezai
+     */
+
+    public function getCartTotal()
+    {
+        return Cart::total();
     }
 
     /**

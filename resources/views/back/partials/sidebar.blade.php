@@ -8,7 +8,7 @@
           <li><a href="{{ URL::to('admin/orders') }}"> Orders <span class="badge badge-info">{{ $totalOrders }}</span></a></li>
 		  <li class="active"><a href="{{ URL::to('admin/customers') }}"><i class="icon-user"></i> Customers <span class="badge badge-info">{{ $totalCustomers }}</span></a></li>
           <li class="divider"></li>
-		  <li><a href="#"><i class="icon-comment"></i> Settings</a></li>
+		  <li><a href="{{ URL::to('admin/settings')}}"><i class="icon-comment"></i> Settings</a></li>
 		  <li><a href="{{ URL::to('admin/logout')}}"><i class="icon-share"></i> Logout</a></li>
 		</ul>
 	</div>

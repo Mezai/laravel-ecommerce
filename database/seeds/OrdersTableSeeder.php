@@ -4,6 +4,7 @@
 use Illuminate\Database\Seeder;
 
 use Faker\Factory as Faker;
+use App\Models\User;
 
 class OrdersTableSeeder extends Seeder
 {
@@ -16,13 +17,13 @@ class OrdersTableSeeder extends Seeder
     {
 
     	$faker = Faker::create();
-
-    	foreach (range(1, 200) as $index) {
+        $users = User::all()->lists('id')->toArray();
+    	foreach (range(1, 20) as $index) {
             DB::table('orders')->insert([
             'total_paid' => $faker->numberBetween(20, 200),
             'payment' => $faker->company(),
             'valid' => $faker->boolean(50),
-            'user_id' => $faker->numberBetween(1, 10),
+            'user_id' => $faker->randomElement($users),
             'created_at' => $faker->dateTimeBetween('-1 years', 'now'),
             'updated_at' => $faker->dateTimeBetween('-2 years', 'now')
 

@@ -77,6 +77,7 @@
           locale: 'auto',
           token: function(token) {
             $form.append($('<input type="hidden" name="stripeToken"/>').val(token.id));
+            $form.append($('<input type="hidden name="stripeEmail"/>').val(token.email));
             $form.submit();
           }
         });
